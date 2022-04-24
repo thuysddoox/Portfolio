@@ -1,8 +1,13 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from '../Modal';
 
 
 const ProjectItem = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  function handleOpenModal() {
+    setIsOpen(!isOpen);
+  }
   return (
     <ProjectItemWrapper className="border-2 border-white relative w-full rounded-2xl ">
       <div className="bg-item" style={{ background: `url(images/bg.png) center center / cover no-repeat scroll` }}>
@@ -10,8 +15,11 @@ const ProjectItem = () => {
       <div className="absolute top-1/3 lg:top-1/2 left-1/2 -translate-x-2/4 w-4/5 text-white text-center">
         <h3 className="font-bold text-lg mb-1">Prism Website</h3>
         <p className="mb-2">Create website based on the template available when client order.</p>
-        <button className="py-1 px-2 bg-red-500 rounded-lg text-sm">Readmore</button>
+        <button className="py-1 px-2 bg-red-500 rounded-lg text-sm" onClick={() => setIsOpen(true)}>Readmore</button>
       </div>
+      <Modal isOpen={isOpen} handleOpen={handleOpenModal}>
+        <div>hello</div>
+      </Modal>
     </ProjectItemWrapper>
   )
 }

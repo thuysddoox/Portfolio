@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +17,8 @@ body {
 * {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.06rem;
+  scroll-behavior: smooth;
+  appearance: none;
 }
 
 img {
@@ -55,4 +58,9 @@ body::-webkit-scrollbar-thumb {
   display: -ms-flexbox;
   display: flex;
   width: auto;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 10;
 }

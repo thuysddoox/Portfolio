@@ -7,9 +7,9 @@
 import React from 'react';
 import { MouseScroll } from './style';
 
-function Scroll() {
+const Scroll = (props) => {
   return (
-    <MouseScroll className="mouse-scroll cursor-pointer hidden sm:block">
+    <MouseScroll className="mouse-scroll cursor-pointer hidden lg:block" onClick={() => props?.handleScroll()}>
       <div className="mouse">
         <div className="wheel" />
       </div>
