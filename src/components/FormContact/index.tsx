@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'react-awesome-reveal';
-
 import styled from '@emotion/styled';
 import useForm from './useForm';
 import validate from './validateRule';
-
+import emailjs from '@emailjs/browser';
 const FormContactWrap = styled.div`
   .bg-custom {
     background: rgba(255, 255, 255, 0.9) !important;
@@ -81,25 +80,22 @@ const FormContact = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [isToast, setIsToast] = useState<boolean>(false);
   const [status, setStatus] = useState<number>(0);
+  const form = useRef<any>();
   function handleToast() {
     setIsToast(!isToast);
   }
   async function send(data: any) {
     console.log(data);
+    emailjs.sendForm('service_cc4c5wk', 'template_wuqql19', form.current, 'O7ipigF2Mkk0b5msT')
+      .then((result) => {
+        console.log(result.text);
+        clearForm();
+      }, (error) => {
+        console.log(error.text);
+      });
   }
   const { handleChange, handleSubmit, clearForm, values, errors } = useForm(send, validate);
 
-  // useEffect(() => {
-  //   setIsSent(status === 200);
-  // }, [status]);
-
-  // useEffect(() => {
-  //   if (isSent) {
-  //     clearForm();
-  //     setIsVerified(false);
-  //     reCaptchaRef?.current?.reset();
-  //   }
-  // }, [isSent]);
 
   return (
     <FormContactWrap className="overflow-hidden">
@@ -111,6 +107,8 @@ const FormContact = () => {
       </Fade> */}
       <div className="pt-2 sm:pt-4 relative z-1">
         <form
+          ref={form}
+          encType="multipart/form-data"
           onSubmit={handleSubmit}
           className="w-full"
         >

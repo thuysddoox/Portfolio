@@ -1,66 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'Montserrat', sans-serif;
-  cursor: url('../public/images/icons/bug.png'), auto;
-}
-
-* {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.06rem;
-  scroll-behavior: smooth;
-  appearance: none;
-}
-
-img {
-  max-width: max-content!important;
-}
-
-.radius-round {
-  border-radius: 50%;
-}
-
-a,
-.cursor-pointer,
-button,
-input[type="submit"] {
-  cursor: url('../public/images/icons/tap.png'), auto!important;
-}
-
-body::-webkit-scrollbar {
-  width: 10px;
-  HEIGHT: 10PX;
-  background-color: #f5f5f5;
-}
-
-body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #f5f5f5;
-  border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.44, #6597d3), color-stop(0.72, #0e5cba));
-}
-
-.my-masonry-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: auto;
-}
-
-.modal {
-  background: rgba(255, 255, 255, 0.5);
-  z-index: 10;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Montserrat', sans-serif;
+    cursor: url('../public/images/icons/bug.png'), auto;
+  }
+  
+  * {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.06rem;
+    scroll-behavior: smooth;
+    appearance: none;
+  }
+  
+  img {
+    max-width: max-content!important;
+  }
+  
+  .radius-round {
+    border-radius: 50%;
+  }
+  
+  a,
+  .cursor-pointer,
+  button,
+  input[type="submit"] {
+    cursor: url('../public/images/icons/tap.png'), auto!important;
+  }
+  
+  .modal-body::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 10px;
+    height: 10PX;
+    background-color: #f5f5f5;
+    cursor: default!important;
+  }
+  
+  .modal-body::-webkit-scrollbar-track,
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    cursor: default!important;
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb,
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    cursor: default!important;
+    cursor: default!important;
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.44, #6597d3), color-stop(0.72, #0e5cba));
+  }
+  
+  .my-masonry-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+  }
+  
+  .modal {
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    cursor: default;
+  }
+  
+  .modal-body {}
+  
+  @media screen and (max-width:1200px) {
+    .wrapper {
+      max-width: 90vw!important;
+    }
+  }
+  
+  @media screen and (max-width:768px) {
+    .wrapper {
+      max-width: 100vw!important;
+    }
+  }

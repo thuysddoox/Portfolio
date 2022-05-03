@@ -11,7 +11,10 @@ import ExperiencePage from "../Experience";
 import HomePage from "../Home";
 import Meta from "../../components/Meta";
 import Footer from "../../components/Footer";
+import { useEffect } from "react";
+
 function App() {
+
   return (
     <div className="app">
       <Meta />
